@@ -6,7 +6,7 @@ A slim uploader for react
 
 ### Usage
 
-1. Design style
+#### 1. Design style
 ```css
 /*app.css*/
 uploader {
@@ -21,12 +21,12 @@ uploader {
 }
 ```
 
-2. Import in
+#### 2. Import in
 ```javascript
 //app.js
 import React from 'react'
 import {render} from 'react-dom'
-import Uploader from '../src'
+import Uploader from 'react-slim-uploader'
 import style from './app.css'
 
 class App extends React.Component {
