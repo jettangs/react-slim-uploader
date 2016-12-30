@@ -50,7 +50,7 @@ class App extends React.Component {
 render(<App/>, document.getElementById('app'))
 ```
 
-![](http://7xqhly.com1.z0.glb.clouddn.com/btn.png)
+![](http://7xqhly.com1.z0.glb.clouddn.com/btn2.png)
 
 ### API
 ```javascript
