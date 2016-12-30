@@ -1,0 +1,14 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.uploader {
+    height: 60px;
+    width: 100px;
+    background: #7F6553;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
