@@ -40,8 +40,8 @@ class App extends React.Component {
             <Uploader
                 className="uploader"
                 content="Upload"
+                type="button"
                 onChange={this.handleUpload.bind(this)}
-                cursor="pointer"
             />
         )
     }
@@ -58,16 +58,18 @@ render(<App/>, document.getElementById('app'))
  * @description 
  * Get param value of dom node object.
  * @param {string} className: className.
- * @param {string} content: the text display on the button.
+ * @param {string} type: button or label.
  * @param {string} cursor: the cursor style.
+ * @param {string} content: the text display on the button.
  * @param @required {function} onChange: will call when the content to upload was changed,
  * will receive param: files(the files' object, obtain a blob object), event(the onChange event)
  */
 
 <Uploader
     className="uploader"
-    content="Upload"
     cursor="pointer"
+    content="Upload"
+    type="button"
     onChange={this.handleUpload.bind(this)}
 />
 ```

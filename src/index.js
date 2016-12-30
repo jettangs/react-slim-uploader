@@ -3,6 +3,8 @@ import {css, creatStyle} from 'aphrodite-freestyle'
 import tools from 'react-common-tools'
 import _style from './style'
 
+console.log()
+
 export default class FileUpload extends React.Component{
 
     state = {style:{}}
@@ -21,10 +23,20 @@ export default class FileUpload extends React.Component{
             span.marginLeft = width * -0.5 + 'px'
             span.marginTop = height * -0.5 + 'px'
             input.cursor = this.props.cursor? this.props.cursor : 'pointer'
-            input.marginLeft = span.marginLeft
-            input.marginTop = span.marginTop
-            input.width = width
-            input.height = height
+            if(this.props.type=='label') {
+                input.marginLeft = span.marginLeft
+                input.marginTop = span.marginTop
+                input.width = width
+                input.height = height
+                input.left = '50%',
+                input.top = '50%'
+            }else {
+                input.width = '100%',
+                input.height = '100%'
+                input.left = '0',
+                input.top = '0'
+            }
+
             this.setState({style : creatStyle(_style)})
         })
     }
@@ -48,19 +60,20 @@ export default class FileUpload extends React.Component{
 
 	render() {
         let style = this.state.style
+        
 		return (
 			<div className={this.props.className}>
                 <div className={css(style.body)}>
-                    <span className={css(style.span)}>
-                        {this.props.content}
-                    </span>
-                    <input
-                        type="file"
-                        ref={input => this.input = input}
-                        multiple={this.props.multiple} 
-                        onChange={this._onChange.bind(this)}
-                        className={css(style.input)}
-                    />
+                        <span className={css(style.span)}>
+                            {this.props.content}
+                        </span>
+                        <input
+                            type="file"
+                            ref={input => this.input = input}
+                            multiple={this.props.multiple} 
+                            onChange={this._onChange.bind(this)}
+                            className={css(style.input)}
+                        />
                 </div>
 			</div>
 		)
@@ -70,12 +83,14 @@ export default class FileUpload extends React.Component{
 
 
 FileUpload.defaultProps = {
+    type: 'button',
     multiple: true,
     content: 'Upload'
 }
 
 FileUpload.propTypes = {
-    onChange: React.PropTypes.func.isRequired,
+    type: React.PropTypes.oneOf(['button','label']),
     multiple: React.PropTypes.bool,
-    content: React.PropTypes.string
+    content: React.PropTypes.string,
+    onChange: React.PropTypes.func.isRequired
 }

@@ -1,6 +1,6 @@
 {
   "name": "react-slim-uploader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple uploader for react",
   "main": "lib/index.js",
   "license": "MIT",
