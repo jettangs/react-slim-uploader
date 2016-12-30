@@ -7,7 +7,6 @@ class App extends React.Component {
  
     handleUpload(files, event) {
         console.log(files)
-
     }
 
     render() {
