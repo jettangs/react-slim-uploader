@@ -9,7 +9,7 @@ A slim uploader for react
 #### 1. Design style
 ```css
 /*app.css*/
-uploader {
+.uploader {
     height: 60px;
     width: 100px;
     background: #7F6553;
